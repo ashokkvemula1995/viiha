@@ -1,0 +1,8 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="28" fill="#14532D"/>
+  <path d="M23 73C35 55 49 45 60 45C71 45 85 55 97 73" stroke="#FACC15" stroke-width="8" stroke-linecap="round"/>
+  <path d="M60 27V86" stroke="#DCFCE7" stroke-width="8" stroke-linecap="round"/>
+  <path d="M38 43C48 42 56 48 60 58C49 58 41 53 38 43Z" fill="#22C55E"/>
+  <path d="M82 43C72 42 64 48 60 58C71 58 79 53 82 43Z" fill="#22C55E"/>
+  <text x="60" y="102" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" fill="white">VIIHA</text>
+</svg>
