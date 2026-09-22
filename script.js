@@ -77,10 +77,10 @@ const translations = {
     register_title:"Farmer membership enquiry", register_heading:"Start your journey with VIIHA.",
     register_text:"Submit your details and they will be securely sent to the VIIHA registration database.",
     call_us:"Call us", service_area:"Service area", email_label:"Email",
-    farmer_name:"Farmer name *", mobile:"Mobile number *", village:"Village *", mandal:"Mandal", acres:"Total acres", crop:"Main crop", service:"Service needed",
+    farmer_name:"Farmer name *", mobile:"Mobile number *", village:"Village *", mandal:"Mandal", acres:"Total acres", crop:"Main crop", aadhaar:"Aadhaar Number *",
     select_crop:"Select crop", crop_paddy:"Paddy", crop_groundnut:"Groundnut", crop_blackgram:"Black Gram", crop_maize:"Maize", crop_other:"Other",
     service_membership:"FPO Membership", service_seeds:"Seeds & Inputs", service_drone:"Drone Spraying", service_machinery:"Machinery", service_procurement:"Crop Procurement", service_market:"Market Linkage",
-    placeholder_full_name:"Full name", placeholder_mobile:"10-digit number", placeholder_village:"Village", placeholder_mandal:"Mandal", placeholder_acres:"Acres",
+    placeholder_full_name:"Full name", placeholder_mobile:"10-digit number", placeholder_village:"Village", placeholder_mandal:"Mandal", placeholder_acres:"Acres", placeholder_aadhaar:"12 అంకెల ఆధార* నంబర్",
     form_note:"By submitting, you consent to VIIHA contacting you about membership and farmer services.", submit:"Submit Registration →",
     cta_title:"Looking to source produce or support a farmer network?", cta_btn:"Work with VIIHA →",
     footer_subtitle:"Farmer Producer Organization", footer_tagline:"Building farmer strength through collective services, transparent transactions and market access.",
@@ -124,10 +124,10 @@ const translations = {
     register_title:"రైతు సభ్యత్వ నమోదు", register_heading:"VIIHAతో మీ ప్రయాణాన్ని ప్రారంభించండి.",
     register_text:"మీ వివరాలను సమర్పించండి. అవి సురక్షితంగా VIIHA నమోదు డేటాబేస్‌కు పంపబడతాయి.",
     call_us:"మాకు కాల్ చేయండి", service_area:"సేవా ప్రాంతం", email_label:"ఇమెయిల్",
-    farmer_name:"రైతు పేరు *", mobile:"మొబైల్ నంబర్ *", village:"గ్రామం *", mandal:"మండలం", acres:"మొత్తం ఎకరాలు", crop:"ప్రధాన పంట", service:"అవసరమైన సేవ",
+    farmer_name:"రైతు పేరు *", mobile:"మొబైల్ నంబర్ *", village:"గ్రామం *", mandal:"మండలం", acres:"మొత్తం ఎకరాలు", crop:"ప్రధాన పంట", aadhaar:"ఆధార్ నంబర్ *",
     select_crop:"పంటను ఎంచుకోండి", crop_paddy:"వరి", crop_groundnut:"వేరుశెనగ", crop_blackgram:"మినుములు", crop_maize:"మొక్కజొన్న", crop_other:"ఇతర",
     service_membership:"FPO సభ్యత్వం", service_seeds:"విత్తనాలు మరియు ఇన్‌పుట్లు", service_drone:"డ్రోన్ స్ప్రేయింగ్", service_machinery:"యంత్రాలు", service_procurement:"పంట కొనుగోలు", service_market:"మార్కెట్ అనుసంధానం",
-    placeholder_full_name:"పూర్తి పేరు", placeholder_mobile:"10 అంకెల మొబైల్ నంబర్", placeholder_village:"గ్రామం", placeholder_mandal:"మండలం", placeholder_acres:"ఎకరాలు",
+    placeholder_full_name:"పూర్తి పేరు", placeholder_mobile:"10 అంకెల మొబైల్ నంబర్", placeholder_village:"గ్రామం", placeholder_mandal:"మండలం", placeholder_acres:"ఎకరాలు", placeholder_aadhaar:"12-digit *adhaar Number",
     form_note:"సమర్పించడం ద్వారా, సభ్యత్వం మరియు రైతు సేవల గురించి VIIHA మిమ్మల్ని సంప్రదించడానికి మీరు అంగీకరిస్తున్నారు.", submit:"నమోదు చేయండి →",
     cta_title:"వ్యవసాయ ఉత్పత్తులను కొనుగోలు చేయాలనుకుంటున్నారా లేదా రైతు నెట్‌వర్క్‌కు మద్దతు ఇవ్వాలనుకుంటున్నారా?", cta_btn:"VIIHAతో పనిచేయండి →",
     footer_subtitle:"రైతు ఉత్పత్తిదారుల సంస్థ", footer_tagline:"సమిష్టి సేవలు, పారదర్శక లావాదేవీలు మరియు మార్కెట్ అనుసంధానం ద్వారా రైతుల అభివృద్ధి.",
@@ -176,16 +176,26 @@ form.addEventListener("submit", async event => {
   submitBtn.textContent = "Submitting...";
 
   const formData = new FormData(form);
+
   const payload = {
-    farmerName: String(formData.get("farmerName") || "").trim(),
-    mobile: String(formData.get("mobile") || "").trim(),
-    village: String(formData.get("village") || "").trim(),
-    mandal: String(formData.get("mandal") || "").trim(),
-    acres: formData.get("acres") || null,
-    crop: String(formData.get("crop") || "").trim(),
-    service: String(formData.get("service") || "").trim(),
-    language: langSelect.value
+  farmerName: String(formData.get("farmerName") || "").trim(),
+  mobile: String(formData.get("mobile") || "").trim(),
+  village: String(formData.get("village") || "").trim(),
+  mandal: String(formData.get("mandal") || "").trim(),
+  acres: formData.get("acres") || null,
+  crop: String(formData.get("crop") || "").trim(),
+  aadhaar: String(formData.get("aadhaar") || "").trim(),
+  language: langSelect.value
   };
+
+  if (!/^\d{12}$/.test(payload.aadhaar)) {
+  formMessage.className = "form-message error";
+  formMessage.textContent = "Please enter a valid 12-digit Aadhaar number.";
+  submitBtn.disabled = false;
+  submitBtn.textContent = "Submit Registration →";
+  return;
+}
+  
 
   try {
     const response = await fetch("/api/register", {
