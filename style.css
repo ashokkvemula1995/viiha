@@ -6,7 +6,7 @@
     .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.photo-stack{position:relative;min-height:540px}.photo-main{position:absolute;inset:0 70px 55px 0;border-radius:28px;object-fit:cover;width:calc(100% - 70px);height:calc(100% - 55px);box-shadow:var(--shadow)}.photo-small{position:absolute;right:0;bottom:0;width:48%;height:245px;border:8px solid white;border-radius:24px;object-fit:cover}.experience{position:absolute;left:-18px;bottom:80px;background:var(--gold);padding:20px;border-radius:18px;width:155px;box-shadow:var(--shadow)}.experience strong{font-size:1.65rem;display:block}.about-copy h2{margin:17px 0 24px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:28px 0}.check{display:flex;gap:9px;font-weight:750;font-size:.9rem}.check b{color:var(--green2)}
     .services-section{background:var(--cream)}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.service-card{background:white;padding:32px;border-radius:22px;border:1px solid transparent;transition:.25s}.service-card:hover{border-color:var(--lime);transform:translateY(-6px);box-shadow:var(--shadow)}.service-icon{width:54px;height:54px;border-radius:15px;background:#eaf2dc;display:grid;place-items:center;font-size:1.55rem;margin-bottom:22px}.service-card h3{font-size:1.18rem;margin-bottom:10px}.service-card p{color:var(--muted);font-size:.9rem}.service-card a{display:inline-block;color:var(--green2);font-weight:800;font-size:.82rem;margin-top:18px}
     .process{background:var(--green);color:white}.process .eyebrow{color:var(--lime)}.process .lead{color:#c9d9cd}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:50px;position:relative}.process-grid:before{content:"";position:absolute;top:28px;left:12%;right:12%;border-top:1px dashed rgba(255,255,255,.35)}.step{position:relative;text-align:center;padding:0 18px}.step-num{margin:auto;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--green);font-weight:900;position:relative;z-index:2}.step h3{font-size:1rem;margin:18px 0 8px}.step p{font-size:.82rem;color:#c6d5ca}
-    .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.audience{min-height:350px;border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:end;color:white;background-size:cover;background-position:center;position:relative;overflow:hidden}.audience:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(4,31,16,.92))}.audience>*{position:relative}.audience h3{font-size:1.6rem;margin-bottom:8px}.audience p{color:#d8e5dc;font-size:.9rem}.audience:nth-child(1){background-image:url('images/farmer.png')}.audience:nth-child(2){background-image:url('images/buyers.png')}.audience:nth-child(3){background-image:url('images/partners.png')}
+    .audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.audience{min-height:350px;border-radius:24px;padding:32px;display:flex;flex-direction:column;justify-content:end;color:white;background-size:cover;background-position:center;position:relative;overflow:hidden}.audience:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,rgba(4,31,16,.92))}.audience>*{position:relative}.audience h3{font-size:1.6rem;margin-bottom:8px}.audience p{color:#d8e5dc;font-size:.9rem}.audience:nth-child(1){background-image:url('farmer.png')}.audience:nth-child(2){background-image:url('buyers.png')}.audience:nth-child(3){background-image:url('partners.png')}
     .register-section{background:#edf4e3}.register-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:start}.register-copy h2{margin:15px 0 20px}.contact-points{display:grid;gap:15px;margin-top:28px}.contact-point{display:flex;gap:13px;align-items:center}.contact-point b{width:42px;height:42px;border-radius:12px;background:white;display:grid;place-items:center}.form-card{background:white;border-radius:25px;padding:34px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.78rem;font-weight:800}.field input,.field select,.field textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;background:#fbfcfa;outline:none;transition:border-color .2s}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--green2)}.form-note{font-size:.72rem;color:var(--muted);margin:14px 0}.form-message{display:none;margin-top:14px;padding:12px;border-radius:10px;font-weight:700;font-size:.86rem}.form-message.success{display:block;background:#e3f5df;color:#245b28}.form-message.error{display:block;background:#fde8e8;color:var(--danger)}
     .cta{padding:80px 0}.cta-box{border-radius:27px;background:linear-gradient(110deg,var(--green),#287446);color:white;padding:55px;display:flex;justify-content:space-between;align-items:center;gap:25px}.cta-box h2{font-size:clamp(1.8rem,3vw,3rem);max-width:680px}.footer{background:#092b18;color:#acc0b1;padding:65px 0 25px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:45px}.footer h4{color:white;margin-bottom:15px}.footer a{display:block;margin:8px 0;font-size:.86rem;transition:color .2s}.footer a:hover{color:var(--lime)}.footer p{font-size:.86rem}.footer .brand{display:flex;align-items:center}.footer .brand-text strong{color:white}.copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:45px;padding-top:22px;display:flex;justify-content:space-between;font-size:.75rem}
     /* scroll-reveal animation */
@@ -147,32 +147,32 @@
 
 /* farmer.png reused for Quality Agri Inputs */
 .agri-inputs-card{
-  background-image:url("images/agri_inputs_bg.png") !important;
+  background-image:url("agri_inputs_bg.png") !important;
 }
 
 /* drone.png reused for Farm Mechanization */
 .mechanization-card{
-  background-image:url("images/farm_mechanization.png") !important;
+  background-image:url("farm_mechanization.png") !important;
 }
 
 /* Original Drone card */
 .drone-card{
-  background-image:url("images/drone_spray.png") !important;
+  background-image:url("drone_spray.png") !important;
 }
 
 /* market_linkages.png reused for Crop Procurement */
 .procurement-card{
-  background-image:url("images/market_linkages.png") !important;
+  background-image:url("market_linkages.png") !important;
 }
 
 /* Original Storage card */
 .storage-card{
-  background-image:url("images/storage.png") !important;
+  background-image:url("storage.png") !important;
 }
 
 /* Original Market card */
 .market-card{
-  background-image:url("images/market_linkages.png") !important;
+  background-image:url("market_linkages.png") !important;
 }
 
 
