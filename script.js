@@ -231,6 +231,5 @@ form.addEventListener("submit", async event => {
 
   submitBtn.disabled = false;
   setLanguage(langSelect.value);
-
 }
-);
+});
