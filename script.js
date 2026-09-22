@@ -196,25 +196,25 @@ form.addEventListener("submit", async event => {
   return;
 }
 
-
   try {
-  const response = await fetch(
+  const formBody = new URLSearchParams();
+
+  Object.entries(payload).forEach(([key, value]) => {
+    formBody.append(key, value ?? "");
+  });
+
+  await fetch(
     "https://script.google.com/macros/s/AKfycbzUl_whgKTZi7GWotHS0TGUWfG14anrOFCvCgB7rVO74h4Ej_RmoU2959YO2XBzdDwj/exec",
     {
       method: "POST",
-      body: JSON.stringify(payload)
+      mode: "no-cors",
+      body: formBody
     }
   );
 
-  const result = await response.json();
-
-  if (!result.success) {
-    throw new Error(result.message || "Registration could not be saved.");
-  }
-
   formMessage.className = "form-message success";
   formMessage.textContent =
-    result.message || "Thank you. Your registration has been saved.";
+    "Thank you. Your registration has been submitted.";
 
   form.reset();
 
@@ -223,10 +223,10 @@ form.addEventListener("submit", async event => {
 
   formMessage.className = "form-message error";
   formMessage.textContent =
-    error.message || "Unable to connect to Google Sheets.";
+    "Unable to submit the registration. Please try again.";
 
 } finally {
   submitBtn.disabled = false;
-  setLanguage(langSelect.value);
+  submitBtn.textContent = translations[langSelect.value].submit;
 }
 });
