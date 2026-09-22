@@ -196,27 +196,41 @@ form.addEventListener("submit", async event => {
   return;
 }
   
-
   try {
-    const response = await fetch("/api/register", {
+
+  const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbySsfnjsWbaixJdYsyJY4LfB5lzg8AnqrpThwbi_PzUr2_Bg12053TlFkwJKk5oJZOu/exec",
+    {
       method: "POST",
-      headers: {"Content-Type":"application/json"},
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(payload)
-    });
-
-    const result = await response.json().catch(() => ({}));
-    if (!response.ok || !result.success) {
-      throw new Error(result.message || "Registration could not be saved.");
     }
+  );
 
-    formMessage.className = "form-message success";
-    formMessage.textContent = result.message || "Thank you. Your registration has been saved.";
-    form.reset();
-  } catch (error) {
-    formMessage.className = "form-message error";
-    formMessage.textContent = error.message || "Unable to connect to the server. Please run app.py and try again.";
-  } finally {
-    submitBtn.disabled = false;
-    setLanguage(langSelect.value);
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok || !result.success) {
+    throw new Error(result.message || "Registration could not be saved.");
   }
-});
+
+  formMessage.className = "form-message success";
+  formMessage.textContent =
+    result.message || "Thank you. Your registration has been saved.";
+
+  form.reset();
+
+} catch (error) {
+
+  formMessage.className = "form-message error";
+  formMessage.textContent =
+    error.message || "Unable to connect to Google Sheets.";
+
+} finally {
+
+  submitBtn.disabled = false;
+  setLanguage(langSelect.value);
+
+}
+);
