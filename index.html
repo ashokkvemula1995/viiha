@@ -139,7 +139,17 @@
           <div class="field"><label for="mandal" data-key="mandal">Mandal</label><input id="mandal" name="mandal" placeholder="Mandal" data-placeholder-key="placeholder_mandal"></div>
           <div class="field"><label for="acres" data-key="acres">Total acres</label><input id="acres" name="acres" type="number" min="0" step="0.01" placeholder="Acres" data-placeholder-key="placeholder_acres"></div>
           <div class="field"><label for="crop" data-key="crop">Main crop</label><select id="crop" name="crop"><option value="" data-option-key="select_crop">Select crop</option><option data-option-key="crop_paddy">Paddy</option><option data-option-key="crop_groundnut">Groundnut</option><option data-option-key="crop_blackgram">Black Gram</option><option data-option-key="crop_maize">Maize</option><option data-option-key="crop_other">Other</option></select></div>
-          <div class="field full"><label for="service" data-key="service">Service needed</label><select id="service" name="service"><option data-option-key="service_membership">FPO Membership</option><option data-option-key="service_seeds">Seeds &amp; Inputs</option><option data-option-key="service_drone">Drone Spraying</option><option data-option-key="service_machinery">Machinery</option><option data-option-key="service_procurement">Crop Procurement</option><option data-option-key="service_market">Market Linkage</option></select></div>
+          <div class="field full">
+            <label for="aadhaar">Aadhaar Number *</label>
+            <input
+              id="aadhaar"
+              name="aadhaar"
+              required
+              inputmode="numeric"
+              pattern="[0-9]{12}"
+              maxlength="12"
+              placeholder="12-digit Aadhaar Number">
+          </div>
         </div>
         <p class="form-note" data-key="form_note">By submitting, you consent to VIIHA contacting you about membership and farmer services.</p>
         <button class="btn btn-dark" id="submitBtn" type="submit" data-key="submit">Submit Registration →</button>
