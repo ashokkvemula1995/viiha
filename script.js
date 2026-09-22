@@ -204,7 +204,7 @@ form.addEventListener("submit", async event => {
   });
 
   await fetch(
-    "https://script.google.com/macros/s/AKfycbzUl_whgKTZi7GWotHS0TGUWfG14anrOFCvCgB7rVO74h4Ej_RmoU2959YO2XBzdDwj/exec",
+    "https://script.google.com/macros/s/AKfycby31thsipEP-ctYSJRpdKLXIYzvkh-anHL-0Z7DGKeSF0-PJJIYlDHLP12zu5ph93N0/exec",
     {
       method: "POST",
       mode: "no-cors",
