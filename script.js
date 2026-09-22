@@ -127,7 +127,7 @@ const translations = {
     farmer_name:"రైతు పేరు *", mobile:"మొబైల్ నంబర్ *", village:"గ్రామం *", mandal:"మండలం", acres:"మొత్తం ఎకరాలు", crop:"ప్రధాన పంట", aadhaar:"ఆధార్ నంబర్ *",
     select_crop:"పంటను ఎంచుకోండి", crop_paddy:"వరి", crop_groundnut:"వేరుశెనగ", crop_blackgram:"మినుములు", crop_maize:"మొక్కజొన్న", crop_other:"ఇతర",
     service_membership:"FPO సభ్యత్వం", service_seeds:"విత్తనాలు మరియు ఇన్‌పుట్లు", service_drone:"డ్రోన్ స్ప్రేయింగ్", service_machinery:"యంత్రాలు", service_procurement:"పంట కొనుగోలు", service_market:"మార్కెట్ అనుసంధానం",
-    placeholder_full_name:"పూర్తి పేరు", placeholder_mobile:"10 అంకెల మొబైల్ నంబర్", placeholder_village:"గ్రామం", placeholder_mandal:"మండలం", placeholder_acres:"ఎకరాలు", placeholder_aadhaar*"12 అంకెల ఆధార్ నంబర్",
+    placeholder_full_name:"పూర్తి పేరు", placeholder_mobile:"10 అంకెల మొబైల్ నంబర్", placeholder_village:"గ్రామం", placeholder_mandal:"మండలం", placeholder_acres:"ఎకరాలు", placeholder_aadhaar:"12 అంకెల ఆధార్ నంబర్",
     form_note:"సమర్పించడం ద్వారా, సభ్యత్వం మరియు రైతు సేవల గురించి VIIHA మిమ్మల్ని సంప్రదించడానికి మీరు అంగీకరిస్తున్నారు.", submit:"నమోదు చేయండి →",
     cta_title:"వ్యవసాయ ఉత్పత్తులను కొనుగోలు చేయాలనుకుంటున్నారా లేదా రైతు నెట్‌వర్క్‌కు మద్దతు ఇవ్వాలనుకుంటున్నారా?", cta_btn:"VIIHAతో పనిచేయండి →",
     footer_subtitle:"రైతు ఉత్పత్తిదారుల సంస్థ", footer_tagline:"సమిష్టి సేవలు, పారదర్శక లావాదేవీలు మరియు మార్కెట్ అనుసంధానం ద్వారా రైతుల అభివృద్ధి.",
@@ -199,7 +199,7 @@ form.addEventListener("submit", async event => {
   try {
 
   const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbzUl_whgKTZi7GWotHS0TGUWfG14anrOFCvCgB7rVO74h4Ej_RmoU2959YO2XBzdDwj/exec"
+    "https://script.google.com/macros/s/AKfycbzUl_whgKTZi7GWotHS0TGUWfG14anrOFCvCgB7rVO74h4Ej_RmoU2959YO2XBzdDwj/exec",
     {
       method: "POST",
       headers: {
